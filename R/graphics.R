@@ -1,4 +1,11 @@
 
+eidaR.env <- new.env()
+eidaR.env$USE_PLOTLY <- TRUE
+
+print_it <- function() {
+    print(eidaR.env$USE_PLOTLY)
+}
+
 my_theme <- function(size = 12) {
   theme(text = element_text(size = size, family = c("Helvetica")))
 }
@@ -16,7 +23,7 @@ display_plot <- function(g1, tooltip = c("x", "y"), formatDate = TRUE) {
     #date_breaks = "1 week", date_minor_breaks = "1 day")
   }
 
-  if (!USE_PLOTLY) {
+  if (!eidaR.env$USE_PLOTLY) {
     return(g1 + theme(legend.title = element_blank()))
   }
 
