@@ -29,6 +29,8 @@ display_plot <- function(g1, tooltip = c("x", "y"), formatDate = TRUE) {
 
   (g1 + theme(legend.title = element_blank())) %>%
     ggplotly(tooltip = tooltip) %>% config(displayModeBar = FALSE) %>%
-    add_margin()# %>% partial_bundle()
+    add_margin() %>% layout(xaxis=list(fixedrange=TRUE)) %>% layout(yaxis=list(fixedrange=TRUE))
+
+# %>% partial_bundle()
 }
 
