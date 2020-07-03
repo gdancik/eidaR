@@ -34,8 +34,8 @@ display_plot <- function(g1, tooltip = c("x", "y"), formatDate = TRUE) {
 # %>% partial_bundle()
 }
 
-saveUnemployment <- function(g, file, dir = getwd(), tooltip = c("x", "y", "fill")) {
+saveUnemployment <- function(g, file, dir = getwd(), tooltip = c("x", "y", "fill"), formatDate = TRUE) {
     file <- paste0(dir,'/',file)
-    htmlwidgets::saveWidget((g%>%display_plot(tooltip = tooltip) %>%
+    htmlwidgets::saveWidget((g%>%display_plot(tooltip = tooltip, formatDate = formatDate) %>%
                           partial_bundle()), file = file)
 }
