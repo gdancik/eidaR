@@ -19,7 +19,7 @@ add_margin <- function(gg) {
 display_plot <- function(g1, tooltip = c("x", "y"), formatDate = TRUE) {
 
   if (formatDate) {
-    g1 <- g1 + scale_x_date(date_labels = "%m/%d") #,
+    g1 <- g1 + scale_x_date(date_labels = "%m/%d/%y") #,
     #date_breaks = "1 week", date_minor_breaks = "1 day")
   }
 
